@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+@font-face {
+    font-family: 'GoldenEye';
+    src: local('007 GoldenEye'), local('007Goldeneye');
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.punct { font-family: 'Arial', sans-serif !important; font-weight: bold; color: #00ffff; margin: 0 2px; }
+.punct-red { font-family: 'Arial', sans-serif !important; font-weight: bold; color: #ff0000; }
+
+.container {
+    display: flex; width: 100vw; height: 100vh; overflow: hidden;
+}
+
+.map-container {
+    transition: width 0.8s ease-in-out; height: 100vh; position: relative;
+    display: flex; justify-content: center; align-items: center; background-color: black;
+}
+
+/* ZOOM KONTROLLERİ (YENİ) */
+.zoom-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100; /* Haritanın üstünde dursun */
+}
+
+.zoom-btn {
+    background: rgba(0, 20, 40, 0.8);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.zoom-btn:hover {
+    background: #00ffff;
+    color: black;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+.news-panel {
+    background-color: #050505; border-left: 2px solid #00ffff; height: 100vh;
+    transition: width 0.8s ease-in-out, opacity 0.5s ease;
+    display: flex; flex-direction: column; position: relative;
+    box-shadow: -30px 0px 60px rgba(0, 255, 255, 0.1); z-index: 10;
+}
+
+.control-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; background: #001a2c; border-bottom: 2px solid #00ffff; min-height: 50px; flex-shrink: 0;
+}
+.lang-box { width: 65%; }
+.close-btn {
+    background: rgba(0, 0, 0, 0.5); border: 1px solid #ff0000; color: #ff0000;
+    font-family: 'GoldenEye', monospace; font-size: 16px; cursor: pointer;
+    padding: 8px 15px; transition: all 0.3s; display: flex; align-items: center;
+}
+.close-btn:hover { background: #ff0000; color: black; box-shadow: 0 0 15px red; }
+
+.show-more-btn {
+    background: transparent; border: 1px solid #00ffff; color: #00ffff;
+    font-family: 'GoldenEye', 'Share Tech Mono', monospace; font-size: 14px;
+    padding: 15px; width: 100%; text-align: center; cursor: pointer;
+    transition: all 0.3s; margin-top: 10px; text-transform: uppercase;
+}
+.show-more-btn:hover { background: #00ffff; color: black; box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+
+/* DROPDOWN & SCROLLBAR */
+.Select-control, .Select-menu-outer, .VirtualizedSelectOption {
+    background-color: black !important; border: 1px solid #00ffff !important; color: #00ffff !important;
+    font-family: 'GoldenEye', 'Share Tech Mono', monospace !important;
+}
+.Select-value-label { color: #00ffff !important; }
+.VirtualizedSelectFocusedOption { background-color: #00ffff !important; color: black !important; font-weight: bold; }
+
+._dash-loading-callback { height: 100%; width: 100%; display: flex; flex-direction: column; }
+.panel-content-scroll { flex-grow: 1; overflow-y: auto; padding: 10px; height: 100%; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #001a2c; }
+::-webkit-scrollbar-thumb { background: #00ffff; border: 1px solid black; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ffffff; box-shadow: 0 0 10px #00ffff; }
+
+.news-item-safe { border-bottom: 1px solid #004444; padding: 20px; border-left: 4px solid transparent; }
+.news-item-safe:hover { background-color: #001111; border-left: 4px solid #00ffff; }
+.news-item-critical { border-bottom: 1px solid #440000; padding: 20px; border-left: 4px solid #ff0000; background: rgba(50, 0, 0, 0.2); }
+.news-item-critical:hover { background-color: #220000; }
+
+.news-title { font-size: 1.3em; margin-bottom: 8px; text-transform: uppercase; font-family: 'GoldenEye', 'Share Tech Mono', monospace; }
+.title-safe { color: #00ffff; }
+.title-critical { color: #ff0000; text-shadow: 0 0 5px red; }
+.news-desc { color: #cccccc; font-size: 0.95em; font-family: 'Segoe UI', sans-serif; line-height: 1.4; }
+.news-meta { color: #888; font-size: 0.8em; margin-top: 10px; text-align: right; font-family: 'Courier New', monospace; }
+.panel-header { color: #00ffff; text-align: center; padding: 20px; font-size: 2em; font-family: 'GoldenEye', 'Share Tech Mono', monospace; border-bottom: 1px solid #004444; display: flex; justify-content: center; align-items: center;}
